@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Gill+Sans|Joanna+Nova');
+
+@keyframes gradient-flow {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-1rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+body {
+    overflow: hidden;
+
+    min-height: 100svh;
+
+    font-family: Muli, sans-serif;
+    font-size: 3rem;
+
+    background-image: linear-gradient(to bottom right, hsl(195, 81%, 73%), hsl(120, 73%, 75%));
+    background-size: 250% 250%;
+    animation: gradient-flow 10s ease infinite alternate;
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    grid-template-areas: 
+        "title title title" 
+        "mickeyfdev mickeyfdev mickeyfdev"
+        "mickeyfdev mickeyfdev mickeyfdev"
+        "mickeyfdev mickeyfdev mickeyfdev";
+}
+
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1#title {
+    grid-area: title;
+
+    color: hsl(0, 0%, 100%);
+    text-shadow: .2rem .1rem .5rem hsl(0, 0%, 10%);
+}
+
+a#mickeyfdev {
+    grid-area: mickeyfdev;
+    grid-row: 2;
+    grid-column: 2;
+
+    color: hsl(0, 0%, 100%);
+    background-color: hsla(0, 0%, 100%, .3);
+    box-shadow: 0 .5rem .8rem hsl(0, 0%, 40%);
+
+    border: .8rem ridge hsl(0, 0%, 100%);
+
+    padding: 1rem 2rem;
+
+    animation: float 2.5s ease-in-out infinite;
+
+    transition: background-color .5s ease;
+}
+
+a#mickeyfdev:hover,
+a#mickeyfdev:focus {
+    background-color: hsla(0, 0%, 100%, .5);
+}
